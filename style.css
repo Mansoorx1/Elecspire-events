@@ -1,801 +1,1070 @@
+/* =========================================
+   ELECSPIRE 2026
+   CLEAN DARK FUTURISTIC DESIGN
+========================================= */
+
+
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-:root {
-  --bg: #08090d;
-  --card: #11131a;
-  --text: #f4f5f7;
-  --muted: #9da2af;
-  --line: #272a34;
-  --accent: #c8ff00;
-  --purple: #7f00ff;
-}
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
+
 
 body {
-  font-family: Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  overflow-x: hidden;
+    background: #07080b;
+    color: #f4f5f7;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+    overflow-x: hidden;
 }
 
 
-/* ================= HERO ================= */
+/* =========================================
+   VARIABLES
+========================================= */
+
+:root {
+
+    --bg: #07080b;
+    --card: #101218;
+    --card-border: #282c35;
+
+    --green: #b7ff00;
+    --green-soft: rgba(183,255,0,0.15);
+
+    --text: #f4f5f7;
+    --muted: #92959e;
+    --dim: #555964;
+
+}
+
+
+/* =========================================
+   HERO
+========================================= */
 
 .hero {
-  min-height: 100vh;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  border-bottom: 1px solid var(--line);
 
-  background:
-    radial-gradient(
-      circle at 80% 20%,
-      rgba(127, 0, 255, 0.15),
-      transparent 30%
-    ),
-    radial-gradient(
-      circle at 10% 70%,
-      rgba(200, 255, 0, 0.08),
-      transparent 25%
-    );
+    min-height: 90vh;
+
+    padding: 30px 7% 80px;
+
+    position: relative;
+
+    background:
+
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(183,255,0,0.08),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 20% 70%,
+            rgba(90,60,255,0.06),
+            transparent 30%
+        );
+
 }
 
 
-/* NAVIGATION */
+.hero-top {
 
-nav {
-  width: 92%;
-  max-width: 1150px;
-  margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-  height: 80px;
+    gap: 30px;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  font-weight: 800;
-  letter-spacing: 2px;
-}
-
-.logo:first-letter {
-  color: var(--accent);
-}
-
-.nav-btn {
-  text-decoration: none;
-  color: white;
-
-  border: 1px solid var(--line);
-
-  padding: 9px 15px;
-
-  border-radius: 30px;
-
-  font-size: 11px;
-  font-weight: bold;
 }
 
 
-/* HERO CONTENT */
+.brand {
+
+    font-size: 1.25rem;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+}
+
+
+.bolt {
+
+    color: var(--green);
+}
+
+
+.college-name {
+
+    font-size: 0.65rem;
+
+    letter-spacing: 2px;
+
+    color: var(--muted);
+
+    text-align: right;
+
+}
+
 
 .hero-content {
-  width: 90%;
-  max-width: 1000px;
 
-  margin: auto;
+    max-width: 850px;
 
-  text-align: center;
-
-  padding: 50px 0 100px;
-}
-
-.college {
-  font-size: 11px;
-
-  letter-spacing: 3px;
-
-  color: var(--accent);
-
-  font-weight: bold;
-}
-
-h1 {
-  font-size: clamp(60px, 15vw, 150px);
-
-  line-height: 1;
-
-  letter-spacing: -6px;
-
-  margin: 20px 0;
-
-  font-weight: 900;
-}
-
-h1 span {
-  color: var(--accent);
-}
-
-.tagline {
-  color: #c3c6ce;
-
-  font-size: 15px;
-
-  max-width: 600px;
-
-  margin: auto auto 32px;
-}
-
-.explore-btn {
-  display: inline-block;
-
-  background: var(--accent);
-
-  color: #08090d;
-
-  text-decoration: none;
-
-  padding: 15px 23px;
-
-  border-radius: 5px;
-
-  font-size: 11px;
-
-  font-weight: 900;
-
-  letter-spacing: 1px;
-
-  transition: 0.2s;
-}
-
-.explore-btn:hover {
-  transform: translateY(-3px);
-
-  box-shadow:
-    0 10px 35px
-    rgba(200, 255, 0, 0.2);
-}
-
-.scroll-text {
-  position: absolute;
-
-  bottom: 25px;
-
-  left: 50%;
-
-  transform: translateX(-50%);
-
-  font-size: 9px;
-
-  letter-spacing: 3px;
-
-  color: #666b76;
-}
-
-
-/* ================= EVENTS ================= */
-
-.events-section {
-  width: 92%;
-  max-width: 1150px;
-
-  margin: auto;
-
-  padding: 90px 0;
-}
-
-.section-label {
-  font-size: 11px;
-
-  letter-spacing: 3px;
-
-  color: var(--accent);
-
-  font-weight: bold;
-}
-
-h2 {
-  font-size: clamp(30px, 6vw, 52px);
-
-  margin: 10px 0;
-
-  line-height: 1.1;
-}
-
-h2 span {
-  color: var(--accent);
-}
-
-.section-description {
-  color: var(--muted);
-
-  font-size: 14px;
-
-  max-width: 600px;
-}
-
-
-/* FILTERS */
-
-.filters {
-  display: flex;
-
-  gap: 8px;
-
-  overflow-x: auto;
-
-  padding: 30px 0 25px;
-
-  scrollbar-width: none;
-}
-
-.filters::-webkit-scrollbar {
-  display: none;
-}
-
-.filter {
-  white-space: nowrap;
-
-  background: transparent;
-
-  color: #aaa;
-
-  border: 1px solid var(--line);
-
-  border-radius: 30px;
-
-  padding: 9px 16px;
-
-  font-size: 10px;
-
-  font-weight: bold;
-
-  cursor: pointer;
-}
-
-.filter.active {
-  background: var(--accent);
-
-  color: #08090d;
-
-  border-color: var(--accent);
-}
-
-
-/* EVENT GRID */
-
-.event-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(3, 1fr);
-
-  gap: 15px;
-}
-
-
-/* EVENT CARD */
-
-.event-card {
-  background:
-    linear-gradient(
-      145deg,
-      #14161e,
-      #0e1016
-    );
-
-  border: 1px solid var(--line);
-
-  border-radius: 14px;
-
-  padding: 21px;
-
-  position: relative;
-
-  overflow: hidden;
-
-  transition: 0.25s;
-}
-
-.event-card:hover {
-  transform: translateY(-5px);
-
-  border-color: #444752;
-}
-
-.event-card::after {
-  content: "";
-
-  position: absolute;
-
-  width: 120px;
-  height: 120px;
-
-  right: -60px;
-  bottom: -60px;
-
-  background: var(--accent);
-
-  filter: blur(60px);
-
-  opacity: 0.07;
-}
-
-.card-top {
-  display: flex;
-
-  justify-content: space-between;
-
-  align-items: center;
-}
-
-.card-top span {
-  color: #666b76;
-
-  font-size: 10px;
-
-  font-weight: bold;
-}
-
-.card-top b {
-  color: var(--accent);
-
-  border: 1px solid #3c441a;
-
-  padding: 5px 7px;
-
-  border-radius: 4px;
-
-  font-size: 8px;
-
-  letter-spacing: 1px;
-}
-
-.event-icon {
-  font-size: 30px;
-
-  margin: 24px 0 10px;
-}
-
-.event-card h3 {
-  font-size: 19px;
-
-  line-height: 1.25;
-
-  margin-bottom: 9px;
-}
-
-.event-card p {
-  font-size: 12px;
-
-  color: #a6aab4;
-
-  line-height: 1.6;
-
-  min-height: 40px;
-}
-
-
-/* DETAILS */
-
-.details {
-  border-top: 1px solid var(--line);
-
-  margin-top: 19px;
-
-  padding-top: 15px;
-
-  display: grid;
-
-  gap: 11px;
-}
-
-.details div {
-  display: flex;
-
-  justify-content: space-between;
-
-  gap: 12px;
-}
-
-.details small {
-  font-size: 8px;
-
-  letter-spacing: 1.2px;
-
-  color: #666b76;
-}
-
-.details strong {
-  text-align: right;
-
-  font-size: 10px;
-
-  color: #e5e7eb;
-
-  font-weight: 600;
-}
-
-.free {
-  color: var(--accent) !important;
-}
-
-
-/* REGISTRATION */
-
-.register {
-  width: 100%;
-
-  margin-top: 18px;
-
-  padding: 10px;
-
-  background: transparent;
-
-  color: #777d89;
-
-  border: 1px dashed #3b3e49;
-
-  border-radius: 6px;
-
-  font-size: 8px;
-
-  font-weight: bold;
-
-  letter-spacing: 1px;
-}
-
-
-/* ================= INFO STRIP ================= */
-
-.info-strip {
-  border-top: 1px solid var(--line);
-
-  border-bottom: 1px solid var(--line);
-
-  padding: 28px 5%;
-
-  display: flex;
-
-  justify-content: center;
-
-  gap: 80px;
-
-  flex-wrap: wrap;
-
-  background: #0b0d12;
-}
-
-.info-strip div {
-  display: flex;
-
-  align-items: center;
-
-  gap: 10px;
-}
-
-.info-strip strong {
-  font-size: 11px;
-}
-
-.info-strip small {
-  color: #666b76;
-
-  font-size: 8px;
-
-  letter-spacing: 1px;
-}
-
-
-/* ================= CONTACT ================= */
-
-.contact {
-  width: 92%;
-  max-width: 900px;
-
-  margin: auto;
-
-  padding: 90px 0;
-
-  text-align: center;
-}
-
-.contact p:not(.section-label) {
-  color: var(--muted);
-
-  font-size: 14px;
-
-  max-width: 600px;
-
-  margin: auto;
-}
-
-
-/* ================= FOOTER ================= */
-
-footer {
-  border-top: 1px solid var(--line);
-
-  padding: 35px 5%;
-
-  text-align: center;
-
-  color: #686d78;
-
-  font-size: 11px;
-}
-
-footer .logo {
-  color: #eee;
-
-  margin-bottom: 8px;
-}
-
-footer small {
-  display: block;
-
-  margin-top: 7px;
-
-  color: #454955;
-}
-
-
-/* ================= MOBILE ================= */
-
-@media (max-width: 850px) {
-
-  .event-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    margin-top: 18vh;
 
 }
 
 
-@media (max-width: 570px) {
+.eyebrow {
 
-  nav {
-    height: 70px;
-  }
+    color: var(--green);
 
-  .logo {
-    font-size: 13px;
-  }
+    font-size: 0.75rem;
 
-  h1 {
-    letter-spacing: -3px;
-  }
+    font-weight: 700;
 
-  .hero-content {
-    padding-top: 30px;
-  }
+    letter-spacing: 4px;
 
-  .event-grid {
-    grid-template-columns: 1fr;
-  }
+    margin-bottom: 20px;
 
-  .events-section {
-    padding: 65px 0;
-  }
+}
 
-  .info-strip {
-    justify-content: flex-start;
+
+.hero h1 {
+
+    font-size: clamp(3rem, 8vw, 7rem);
+
+    line-height: 0.95;
+
+    letter-spacing: -4px;
+
+    font-weight: 800;
+
+}
+
+
+.hero h1 span {
+
+    color: var(--green);
+
+}
+
+
+.hero-description {
+
+    max-width: 550px;
+
+    color: var(--muted);
+
+    font-size: 1.05rem;
+
+    line-height: 1.6;
+
+    margin-top: 30px;
+
+}
+
+
+.festival-dates {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+    margin-top: 40px;
+
+}
+
+
+.date-box {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+
+.date-box span {
+
+    font-size: 0.65rem;
+
+    letter-spacing: 2px;
+
+    color: var(--green);
+
+}
+
+
+.date-box strong {
+
+    font-size: 0.95rem;
+
+}
+
+
+.date-line {
+
+    width: 40px;
+
+    height: 1px;
+
+    background: #444851;
+
+}
+
+
+.hero-button {
+
+    display: inline-flex;
+
+    align-items: center;
 
     gap: 20px;
-  }
 
-  .info-strip div {
-    width: 100%;
-  }
+    margin-top: 45px;
 
-    }
+    padding: 15px 22px;
 
-/* ================================
-   DATE DISPLAY
-================================ */
+    border: 1px solid var(--green);
 
-.dates {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
-    margin: 25px 0;
-    flex-wrap: wrap;
-}
+    color: var(--green);
 
-.dates div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.dates span {
-    font-size: 0.75rem;
-    letter-spacing: 2px;
-    opacity: 0.7;
-}
-
-.dates strong {
-    font-size: 1rem;
-    margin-top: 5px;
-}
-
-.date-divider {
-    opacity: 0.4;
-    font-size: 1.5rem;
-}
-
-
-/* ================================
-   REGISTRATION BUTTON
-================================ */
-
-.register-btn {
-    display: block;
-    width: 100%;
-    margin-top: 22px;
-    padding: 14px 18px;
-
-    text-align: center;
     text-decoration: none;
 
-    border: 1px solid #c8ff00;
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    transition: 0.25s ease;
+
+}
+
+
+.hero-button:hover {
+
+    background: var(--green);
+
+    color: #080a0d;
+
+}
+
+
+.hero-button span {
+
+    font-size: 1.1rem;
+
+}
+
+
+/* =========================================
+   EVENTS SECTION
+========================================= */
+
+.events-section {
+
+    width: 90%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 80px 0 100px;
+
+}
+
+
+.section-label {
+
+    color: var(--green);
+
+    font-size: 0.7rem;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.section-heading h2 {
+
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+
+    line-height: 1;
+
+    letter-spacing: -2px;
+
+}
+
+
+.section-heading h2 span {
+
+    color: var(--green);
+
+}
+
+
+.section-description {
+
+    max-width: 600px;
+
+    margin-top: 20px;
+
+    color: var(--muted);
+
+    font-size: 1rem;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================
+   FILTERS
+========================================= */
+
+.filters {
+
+    display: flex;
+
+    gap: 15px;
+
+    margin: 55px 0 45px;
+
+    overflow-x: auto;
+
+    padding-bottom: 5px;
+
+    scrollbar-width: none;
+
+}
+
+
+.filters::-webkit-scrollbar {
+
+    display: none;
+
+}
+
+
+.filter-btn {
+
+    flex-shrink: 0;
+
+    padding: 14px 28px;
+
+    border-radius: 40px;
+
+    border: 1px solid #292d36;
+
     background: transparent;
 
-    color: #c8ff00;
-    font-weight: bold;
+    color: #92959e;
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
     letter-spacing: 1px;
 
     cursor: pointer;
 
     transition: 0.25s ease;
-}
 
-.register-btn:hover {
-    background: #c8ff00;
-    color: #08090d;
-
-    box-shadow:
-        0 0 15px rgba(200,255,0,0.5);
-}
-
-.register-btn.disabled {
-    opacity: 0.45;
-    cursor: not-allowed;
-    border-color: #666;
-    color: #aaa;
-}
-
-.register-btn.disabled:hover {
-    background: transparent;
-    color: #aaa;
-    box-shadow: none;
 }
 
 
-/* ================================
-   EVENT INFO IMPROVEMENT
-================================ */
+.filter-btn:hover {
 
-.event-info {
-    margin-top: 20px;
-}
+    border-color: var(--green);
 
-.event-info div {
-    margin-bottom: 13px;
-}
+    color: var(--green);
 
-.event-info span {
-    display: block;
-
-    font-size: 0.65rem;
-    letter-spacing: 1.5px;
-
-    opacity: 0.55;
-
-    margin-bottom: 3px;
-}
-
-.event-info strong {
-    display: block;
-
-    font-size: 0.9rem;
-    line-height: 1.4;
 }
 
 
-/* ================================
-   EVENT TITLE SUBTEXT
-================================ */
+.filter-btn.active {
 
-.event-card h3 span {
-    display: block;
+    background: var(--green);
 
-    font-size: 0.8em;
-    opacity: 0.65;
+    border-color: var(--green);
 
-    margin-top: 4px;
+    color: #080a0d;
+
 }
 
 
-/* ================================
-   INFO SECTION
-================================ */
+/* =========================================
+   EVENT GRID
+========================================= */
 
-.info-section {
-    width: 90%;
-    max-width: 1100px;
-
-    margin: 40px auto 80px;
+.events-grid {
 
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
 
-    gap: 20px;
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 28px;
+
 }
 
-.info-card {
+
+/* =========================================
+   EVENT CARD
+========================================= */
+
+.event-card {
+
+    position: relative;
+
+    padding: 38px 40px;
+
+    background:
+
+        radial-gradient(
+            circle at 100% 100%,
+            rgba(183,255,0,0.025),
+            transparent 30%
+        ),
+
+        var(--card);
+
+    border: 1px solid var(--card-border);
+
+    border-radius: 24px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+
+}
+
+
+.event-card:hover {
+
+    transform: translateY(-4px);
+
+    border-color: rgba(183,255,0,0.35);
+
+}
+
+
+/* =========================================
+   CARD TOP
+========================================= */
+
+.card-top {
+
     display: flex;
+
+    justify-content: space-between;
+
     align-items: center;
-    gap: 15px;
 
-    padding: 20px;
-
-    border: 1px solid rgba(200,255,0,0.15);
-    background: rgba(255,255,255,0.02);
 }
 
-.info-card > span {
-    font-size: 1.6rem;
+
+.event-number {
+
+    color: #656974;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
 }
 
-.info-card small {
-    display: block;
+
+.day-badge {
+
+    padding: 8px 13px;
+
+    border: 1px solid rgba(183,255,0,0.35);
+
+    border-radius: 6px;
+
+    color: var(--green);
 
     font-size: 0.65rem;
+
+    font-weight: 700;
+
     letter-spacing: 1.5px;
 
-    opacity: 0.5;
 }
 
-.info-card strong {
+
+.double-day {
+
+    padding-left: 11px;
+
+    padding-right: 11px;
+
+}
+
+
+/* =========================================
+   EVENT ICON
+========================================= */
+
+.event-icon {
+
+    width: 55px;
+
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-top: 45px;
+
+    font-size: 2.1rem;
+
+}
+
+
+/* =========================================
+   EVENT TITLE
+========================================= */
+
+.event-card h3 {
+
+    margin-top: 20px;
+
+    font-size: 1.8rem;
+
+    line-height: 1.15;
+
+    letter-spacing: -0.8px;
+
+}
+
+
+.event-card h3 small {
+
     display: block;
 
     margin-top: 5px;
-    font-size: 0.9rem;
+
+    font-size: 0.72em;
+
+    color: #a4a7ae;
+
+    font-weight: 500;
+
+    letter-spacing: 0;
+
 }
 
 
-/* ================================
-   MOBILE
-================================ */
+/* =========================================
+   DESCRIPTION
+========================================= */
 
-@media (max-width: 700px) {
+.event-description {
 
-    .dates {
-        gap: 15px;
-    }
+    margin-top: 20px;
 
-    .dates strong {
-        font-size: 0.85rem;
-    }
+    max-width: 580px;
 
-    .info-section {
+    color: #92959e;
+
+    font-size: 0.95rem;
+
+    line-height: 1.65;
+
+}
+
+
+/* =========================================
+   DETAILS
+========================================= */
+
+.event-details {
+
+    margin-top: 30px;
+
+    padding-top: 24px;
+
+    border-top: 1px solid #292d35;
+
+}
+
+
+.detail-row {
+
+    display: grid;
+
+    grid-template-columns: 90px 1fr;
+
+    gap: 20px;
+
+    align-items: start;
+
+    margin-bottom: 17px;
+
+}
+
+
+.detail-row:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+.detail-row span {
+
+    color: #555963;
+
+    font-size: 0.65rem;
+
+    font-weight: 600;
+
+    letter-spacing: 1.8px;
+
+}
+
+
+.detail-row strong {
+
+    color: #e3e5e9;
+
+    font-size: 0.83rem;
+
+    line-height: 1.45;
+
+    text-align: right;
+
+}
+
+
+.detail-row strong.free {
+
+    color: var(--green);
+
+}
+
+
+/* =========================================
+   REGISTER BUTTON
+========================================= */
+
+.register-button {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-top: 28px;
+
+    padding: 14px 17px;
+
+    border: 1px solid rgba(183,255,0,0.35);
+
+    border-radius: 8px;
+
+    color: var(--green);
+
+    text-decoration: none;
+
+    font-size: 0.72rem;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    transition: 0.25s ease;
+
+}
+
+
+.register-button span {
+
+    font-size: 1rem;
+
+}
+
+
+.register-button:hover {
+
+    background: var(--green);
+
+    color: #080a0d;
+
+    border-color: var(--green);
+
+}
+
+
+/* =========================================
+   DATE BANNER
+========================================= */
+
+.date-banner {
+
+    width: 90%;
+
+    max-width: 1000px;
+
+    margin: 0 auto 100px;
+
+    padding: 30px;
+
+    border-top: 1px solid #292d35;
+
+    border-bottom: 1px solid #292d35;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 50px;
+
+}
+
+
+.date-banner div:not(.banner-divider) {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 6px;
+
+}
+
+
+.date-banner span {
+
+    color: var(--green);
+
+    font-size: 0.65rem;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+}
+
+
+.date-banner strong {
+
+    font-size: 0.9rem;
+
+}
+
+
+.banner-divider {
+
+    width: 1px;
+
+    height: 35px;
+
+    background: #383c44;
+
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+
+    padding: 60px 20px;
+
+    text-align: center;
+
+    border-top: 1px solid #191c22;
+
+}
+
+
+.footer-brand {
+
+    color: var(--green);
+
+    font-size: 1.4rem;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+}
+
+
+footer p {
+
+    color: #777b85;
+
+    font-size: 0.7rem;
+
+    letter-spacing: 1.5px;
+
+    margin-top: 10px;
+
+}
+
+
+.footer-line {
+
+    width: 50px;
+
+    height: 1px;
+
+    background: #383c44;
+
+    margin: 25px auto;
+
+}
+
+
+footer small {
+
+    color: #4e525b;
+
+    font-size: 0.6rem;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 850px) {
+
+    .events-grid {
+
         grid-template-columns: 1fr;
+
     }
 
-    .event-info strong {
-        font-size: 0.85rem;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .hero {
+
+        min-height: auto;
+
+        padding: 22px 6% 70px;
+
+    }
+
+
+    .hero-top {
+
+        align-items: flex-start;
+
+    }
+
+
+    .brand {
+
+        font-size: 1rem;
+
+    }
+
+
+    .college-name {
+
+        max-width: 130px;
+
+        font-size: 0.48rem;
+
+        line-height: 1.5;
+
+    }
+
+
+    .hero-content {
+
+        margin-top: 15vh;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: clamp(3rem, 15vw, 5rem);
+
+        letter-spacing: -3px;
+
+    }
+
+
+    .hero-description {
+
+        font-size: 0.9rem;
+
+    }
+
+
+    .festival-dates {
+
+        gap: 18px;
+
+    }
+
+
+    .date-box strong {
+
+        font-size: 0.75rem;
+
+    }
+
+
+    .date-line {
+
+        width: 20px;
+
+    }
+
+
+    .events-section {
+
+        width: 88%;
+
+        padding-top: 65px;
+
+    }
+
+
+    .section-heading h2 {
+
+        font-size: 2.7rem;
+
+    }
+
+
+    .section-description {
+
+        font-size: 0.9rem;
+
+    }
+
+
+    .filters {
+
+        margin-top: 40px;
+
+    }
+
+
+    .filter-btn {
+
+        padding: 12px 22px;
+
+        font-size: 0.68rem;
+
+    }
+
+
+    .event-card {
+
+        padding: 28px 28px;
+
+        border-radius: 20px;
+
+    }
+
+
+    .event-icon {
+
+        margin-top: 35px;
+
+    }
+
+
+    .event-card h3 {
+
+        font-size: 1.55rem;
+
+    }
+
+
+    .event-description {
+
+        font-size: 0.88rem;
+
+    }
+
+
+    .detail-row {
+
+        grid-template-columns: 70px 1fr;
+
+        gap: 12px;
+
+    }
+
+
+    .detail-row strong {
+
+        font-size: 0.78rem;
+
+    }
+
+
+    .date-banner {
+
+        width: 88%;
+
+        gap: 20px;
+
+    }
+
+
+    .date-banner strong {
+
+        font-size: 0.7rem;
+
     }
 
 }
