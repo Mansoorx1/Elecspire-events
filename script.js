@@ -1,19 +1,24 @@
 const filterButtons = document.querySelectorAll(".filter-btn");
 const eventCards = document.querySelectorAll(".event-card");
 
+
 filterButtons.forEach(button => {
 
     button.addEventListener("click", () => {
 
-        // Remove active state
+        const filter = button.dataset.filter;
+
+
+        // Update active button
+
         filterButtons.forEach(btn => {
             btn.classList.remove("active");
         });
 
-        // Add active state
         button.classList.add("active");
 
-        const filter = button.dataset.filter;
+
+        // Filter events
 
         eventCards.forEach(card => {
 
