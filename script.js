@@ -1,41 +1,38 @@
-const filters = document.querySelectorAll(".filter");
+const filterButtons = document.querySelectorAll(".filter-btn");
+const eventCards = document.querySelectorAll(".event-card");
 
-const cards = document.querySelectorAll(".event-card");
+filterButtons.forEach(button => {
 
+    button.addEventListener("click", () => {
 
-filters.forEach(filter => {
+        // Remove active state
+        filterButtons.forEach(btn => {
+            btn.classList.remove("active");
+        });
 
-  filter.addEventListener("click", () => {
+        // Add active state
+        button.classList.add("active");
 
-    // Remove active state
-    filters.forEach(button => {
-      button.classList.remove("active");
+        const filter = button.dataset.filter;
+
+        eventCards.forEach(card => {
+
+            if (filter === "all") {
+
+                card.style.display = "block";
+
+            } else if (card.classList.contains(filter)) {
+
+                card.style.display = "block";
+
+            } else {
+
+                card.style.display = "none";
+
+            }
+
+        });
+
     });
-
-    // Activate clicked button
-    filter.classList.add("active");
-
-    const category = filter.dataset.filter;
-
-
-    // Show / hide cards
-    cards.forEach(card => {
-
-      if (
-        category === "all" ||
-        card.classList.contains(category)
-      ) {
-
-        card.style.display = "";
-
-      } else {
-
-        card.style.display = "none";
-
-      }
-
-    });
-
-  });
 
 });
